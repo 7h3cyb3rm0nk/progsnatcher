@@ -1,0 +1,26 @@
+#!/bin/bash
+clear
+echo "                        PROG SNATCHER"
+echo " "
+echo "                        7H3CYB3RM0NK"
+echo "this program only works if both the computers are in a subnet"
+echo " "
+echo "the program will be copied to your current directory"
+echo " "
+echo "enter the ip address(local) of the computer to snatch programs from" 
+read ip
+
+echo "enter the username of the logged in user on the other computer"
+read username
+
+echo "enter the program path (absolute path)"
+
+read path 
+echo "enter the program name to save to "
+read progname
+cmd="scp $username@$ip:$path  $progname"
+eval $cmd
+echo "check your current directory for the copied program"
+sleep 4
+history -c && clear 
+
